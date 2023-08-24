@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
 ###> doctrine/doctrine-bundle ###
-  clicrepare:
+  database:
     image: 'mysql:latest'
     environment:
       MYSQL_ROOT_PASSWORD: password
