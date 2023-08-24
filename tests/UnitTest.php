@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Tests\ebsites\ClicRepare\clicrepare\tests;
+namespace App\Tests;
 
+use App\Entity\Demo;
 use PHPUnit\Framework\TestCase;
 
 class UnitTest extends TestCase
 {
-    public function testdemo()
+    public function testDemo()
     {
         $demo = new Demo();
-        $demo->setDemo('Demo');
+        $demo->setDemo('demo');
 
         $this->assertTrue($demo->getDemo() === 'demo');
-        return 'Ca fonctionne';
     }
 }
