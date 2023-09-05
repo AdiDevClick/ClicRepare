@@ -16,6 +16,27 @@ services:
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
       # - ./docker/db/data:/var/lib/postgresql/data:rw
 ###< doctrine/doctrine-bundle ###
+# phpMyAdmin container
+  phpmyadmin:
+# Use phpmyadmin/phpmyadmin:5.0.2 image
+    image: 'phpmyadmin:latest'
+# A name for the container
+    #container_name: phpmyadmin_docker_clicrepare
+# Restart if process is killed
+    restart: always
+# Connect to "my-network" network, as defined below
+    #networks:
+      #- dev
+# Map port 8080 on the host to port 80 inside the container
+# Syntax is: "HOST_PORT:CONTAINER_PORT"
+    ports:
+      - '8010:80'
+# Pass a list of environment variables to the container
+    environment:
+      PMA_HOST: database
+# Wait for "mysql" container to start first 
+    depends_on:
+      - database
 
 volumes:
 ###> doctrine/doctrine-bundle ###

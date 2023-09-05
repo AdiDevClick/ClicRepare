@@ -6,7 +6,7 @@ Clic Répare est un site internet de réparation d'ordinateur à domicil, de mon
 
 ### Pré-requis
 
- * PHP 8.2.4
+ * PHP 8.2
  * Composer
  * Symfony CLI
  * Docker
@@ -20,9 +20,11 @@ symfony check:requirements
 
 ### Lancer l'environnement de développement
 
-
 ```bash
 docker-compose up -d
 symfony serve -d
 ```
-
+### Lancer des tests
+```bash
+php bin/phpunit --tedox
+```
